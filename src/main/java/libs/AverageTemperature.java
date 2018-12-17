@@ -5,11 +5,18 @@ package libs;
  */
 public class AverageTemperature {
 
+  /*
+   * The original implementation will not work when input is huge as tsum
+   * uses byte (-128 to 127). When tsum exceeds max byte value, it would wrap
+   * around from min value. Use the data type with the biggest size as
+   * much as possible.
+   */
+
   public static double getTemperature(byte[] temperatures) {
-    byte tsum = 0;
+    long tsum = 0;
     int i;
-    for (i = 1; i < temperatures.length; i++) {
-      tsum += temperatures[i-1];
+    for (i = 0; i < temperatures.length; i++) {
+      tsum += temperatures[i];
     }
 
     return tsum*1.0/i;
