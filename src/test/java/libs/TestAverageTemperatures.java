@@ -23,11 +23,4 @@ public class TestAverageTemperatures {
             "Expected average value is wrong!");
   }
 
-  @Test
-  public void testAverageIsCalculatedProperlyWithEmptyData() {
-
-    double average = AverageTemperature.getTemperature(InputValues.emptyInput);
-    assertEquals(Double.NaN, average,"Expected average value should be NaN");
-  }
-
 }

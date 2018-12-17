@@ -53,19 +53,6 @@ public class TestMaxAndMinTemperatures {
     assertEquals(MaxAndMinTemperatures.getMaxTemperature(input3), 127);
 
   }
-
-//  @Test
-//  public void testMinMaxTemperatureWithEmptyInput() {
-//
-//    assertEquals(MaxAndMinTemperatures.getMinTemperature(InputValues.emptyInput), Double.NaN);
-//    //assertEquals(MaxAndMinTemperatures.getMaxTemperature(InputValues.emptyInput), Double.NaN);
-//
-//  }
-//
-//  @Test
-//  public void testMinTemperatureWithAllPositiveInput() {
-//    int min = MaxAndMinTemperatures.getMinTemperature(InputValues.allPositive);
-//    assertEquals(min, InputValues.ALL_POSITIVE_MIN);
-//  }
+  
 
 }

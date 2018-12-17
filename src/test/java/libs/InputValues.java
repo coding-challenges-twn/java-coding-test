@@ -18,7 +18,6 @@ public class InputValues {
     public static byte[] typicalValues = {10, 40, 0, -7, 20, 30, 7};
     public static byte[] allNegative = {-12, -30, -40, -20, -20, -7, -15};
     public static byte[] allPositive = {12, 30, 40, 20, 20, 7, 15, 24};
-    public static byte[] emptyInput = {};
 
     public static byte[] bigData = {22, 7, 0, 23, 26, 22, 23, 26, 26, 26, -7, 7, 0,
                                     23, 26, 22, 23, 26, 26, 26, 23, 26, 22, 23, 26,
