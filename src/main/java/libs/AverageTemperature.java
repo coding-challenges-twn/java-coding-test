@@ -7,7 +7,7 @@ public class AverageTemperature {
 
   /*
    * The original implementation will not work when input is huge as tsum
-   * uses byte (-128 to 128). When tsum exceeds max byte value, it would wrap
+   * uses byte (-128 to 127). When tsum exceeds max byte value, it would wrap
    * around from min value. Use the data type with the biggest size as
    * much as possible.
    */
