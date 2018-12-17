@@ -6,10 +6,10 @@ package libs;
 public class AverageTemperature {
 
   public static double getTemperature(byte[] temperatures) {
-    byte tsum = 0;
+    int tsum = 0;
     int i;
-    for (i = 1; i < temperatures.length; i++) {
-      tsum += temperatures[i-1];
+    for (i = 0; i < temperatures.length; i++) {
+      tsum += temperatures[i];
     }
 
     return tsum*1.0/i;

@@ -6,17 +6,66 @@ import org.testng.annotations.Test;
 
 public class TestMaxAndMinTemperatures {
 
+
   @Test
   public void testMaximumTemperature() {
-    byte[] measurements = {10, 11, 30};
-    int max = MaxAndMinTemperatures.getMaxTemperature(measurements);
-    assertEquals(max, 30);
+    int max = MaxAndMinTemperatures.getMaxTemperature(InputValues.typicalValues);
+    assertEquals(max, InputValues.TYPICAL_VALUES_MAX);
+  }
+
+  @Test
+  public void testMaximumTemperatureWithAllNegativeInput() {
+    int max = MaxAndMinTemperatures.getMaxTemperature(InputValues.allNegative);
+    assertEquals(max, InputValues.ALL_NEGATIVE_MAX);
+  }
+
+  @Test
+  public void testMaximumTemperatureWithAllPositiveInput() {
+    int max = MaxAndMinTemperatures.getMaxTemperature(InputValues.allPositive);
+    assertEquals(max, InputValues.ALL_POSITIVE_MAX);
   }
 
   @Test
   public void testMinTemperature() {
-    byte[] measurements = {10, 11, 12, 1, 2};
-    int min = MaxAndMinTemperatures.getMinTemperature(measurements);
-    assertEquals(min, 1);
+    int min = MaxAndMinTemperatures.getMinTemperature(InputValues.typicalValues);
+    assertEquals(min, InputValues.TYPICAL_VALUES_MIN);
   }
+
+  @Test
+  public void testMinTemperatureWithAllNegativeInput() {
+    int min = MaxAndMinTemperatures.getMinTemperature(InputValues.allNegative);
+    assertEquals(min, InputValues.ALL_NEGATIVE_MIN);
+  }
+
+  @Test
+  public void testMinMaxTemperatureWithZeroAndByteValueMinMax() {
+    byte [] input1 = {0};
+    byte [] input2 = {-128};
+    byte [] input3 = {127};
+
+    assertEquals(MaxAndMinTemperatures.getMinTemperature(input1), 0);
+    assertEquals(MaxAndMinTemperatures.getMaxTemperature(input1), 0);
+
+    assertEquals(MaxAndMinTemperatures.getMinTemperature(input2), -128);
+    assertEquals(MaxAndMinTemperatures.getMaxTemperature(input2), -128);
+
+    assertEquals(MaxAndMinTemperatures.getMinTemperature(input3), 127);
+    assertEquals(MaxAndMinTemperatures.getMaxTemperature(input3), 127);
+
+  }
+
+//  @Test
+//  public void testMinMaxTemperatureWithEmptyInput() {
+//
+//    assertEquals(MaxAndMinTemperatures.getMinTemperature(InputValues.emptyInput), Double.NaN);
+//    //assertEquals(MaxAndMinTemperatures.getMaxTemperature(InputValues.emptyInput), Double.NaN);
+//
+//  }
+//
+//  @Test
+//  public void testMinTemperatureWithAllPositiveInput() {
+//    int min = MaxAndMinTemperatures.getMinTemperature(InputValues.allPositive);
+//    assertEquals(min, InputValues.ALL_POSITIVE_MIN);
+//  }
+
 }
