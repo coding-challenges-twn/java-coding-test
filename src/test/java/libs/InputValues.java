@@ -8,16 +8,15 @@ public class InputValues {
      *   1. Input are all in the range of a byte size (-128 to 127).
      *      This also means that there is no way that a char can be an input.
      *
-     *   2. There is no way that an empty list can be passed in the functions.
-     *      If there is a possibility, then an additional ArithmeticException-catch should
-     *       be added in computing the average to catch scenario of dividing 0/0 as well
-     *       as ArrayIndexOutOfBoundsException for Max and Min.
+     *   2. Possible Exceptions such as ArithmeticExceptions and IndexOutOfBound Exceptions
+     *      will be handled outside of the methods.
      *
      * */
 
     public static byte[] typicalValues = {10, 40, 0, -7, 20, 30, 7};
     public static byte[] allNegative = {-12, -30, -40, -20, -20, -7, -15};
     public static byte[] allPositive = {12, 30, 40, 20, 20, 7, 15, 24};
+    public static byte[] emptyInput = {};
 
     public static byte[] bigData = {22, 7, 0, 23, 26, 22, 23, 26, 26, 26, -7, 7, 0,
                                     23, 26, 22, 23, 26, 26, 26, 23, 26, 22, 23, 26,
@@ -38,8 +37,5 @@ public class InputValues {
 
     public final static int ALL_POSITIVE_MIN = 7;
     public final static int ALL_POSITIVE_MAX = 40;
-
-    public final static int BIG_DATA_MIN = -8;
-
 
 }

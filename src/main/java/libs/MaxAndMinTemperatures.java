@@ -21,13 +21,14 @@ public class MaxAndMinTemperatures {
   }
 
   /*
-   * Though this is not the most efficient way to solve for the minimum
-   * value in a list, this is expected to work just fine under the conditions
-   * indicated in the Assumptions (see InputValues).
+   * The original method will work with all possible numeric values  in the range
+   * of a byte size (-128 to 127). However, it would not when input is an EMPTY list.
+   * Instead of returning an Exception, it will return the value of the
+   * initial value of t which is byte-casted value of Integer.MAX_VALUE.
    */
   public static byte getMinTemperature(byte[] temperatures) {
-    int t = Integer.MAX_VALUE;
-    for (int i = 0; i < temperatures.length; i++) {
+    int t = temperatures[0];
+    for (int i = 1; i < temperatures.length; i++) {
       if (t > temperatures[i]) {
         t = temperatures[i];
       }
